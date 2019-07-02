@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res, next) => {
   const url = req.query.url;
+  res.header("Access-Control-Allow-Origin", "*");
   cloudscraper.get(url).then(
     response => {
       res.send(response);
