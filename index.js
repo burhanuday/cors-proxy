@@ -1,14 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cloudscraper = require("cloudscraper");
+const cors = require("cors");
 
 const app = express();
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 5000;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(cors());
 
-app.get("/", (req, res, next) => {
-  const url = req.query.url;
+app.post("/", (req, res, next) => {
+  let url = req.body.urlToGet;
+
   res.header("Access-Control-Allow-Origin", "*");
   cloudscraper.get(url).then(
     response => {
