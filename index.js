@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res, next) => {
   const url = req.query.url;
-  res.send('{message: "working"}');
   cloudscraper.get(url).then(
     response => {
       res.send(response);
