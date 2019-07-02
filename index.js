@@ -3,12 +3,13 @@ const bodyParser = require("body-parser");
 const cloudscraper = require("cloudscraper");
 
 const app = express();
+let port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res, next) => {
   const url = req.query.url;
-  res.send("{message: \"working\"}")
+  res.send('{message: "working"}');
   cloudscraper.get(url).then(
     response => {
       res.send(response);
@@ -19,4 +20,4 @@ app.get("/", (req, res, next) => {
   );
 });
 
-app.listen(5000);
+app.listen(port);
