@@ -1,0 +1,30 @@
+{
+  "name": "cors-proxy-server",
+  "version": "1.0.0",
+  "description": "cors proxy server that adds cors header to all get requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "start-server": "node index.js"
+  },
+  "keywords": [
+    "cors",
+    "server",
+    "proxy"
+  ],
+  "author": "burhanuday",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cloudscraper": "^4.1.2",
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
