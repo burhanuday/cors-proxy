@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cloudscraper = require("cloudscraper");
 const cors = require("cors");
 
